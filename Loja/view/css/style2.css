@@ -1,0 +1,13 @@
+.align-middle {
+  display: flex;
+  align-items: center;
+}
+
+.align-middle {
+  display: flex;
+  justify-items: center;
+}
+
+.icons {
+  width: 3.5rem;
+}

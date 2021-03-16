@@ -1,0 +1,29 @@
+                                                                       
+                            
+                                       Não Realizados
+
+
+- Criar kits para venda (ex: 1 camiseta por 80, 2 por 140)
+
+- código personalizáveis para desconto
+
+- pagseguro 
+
+- melhor envio
+
+- personalizar fretes
+
+- pixel Facebook
+
+- pixel Google ADS
+
+- informações diárias e mensais (visitas no site, compras, etc.) 
+
+- FUTURO APLICATIVO(c sharp)
+
+                                        Realizados 
+
+
+- opção Zoom nas peças
+
+

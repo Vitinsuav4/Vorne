@@ -1,0 +1,313 @@
+<?php
+/* Smarty version 3.1.36, created on 2021-01-05 01:42:10
+  from 'C:\xampp\htdocs\Loja\adm\view\adm_editar_produtos.tpl' */
+
+/* @var Smarty_Internal_Template $_smarty_tpl */
+if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
+  'version' => '3.1.36',
+  'unifunc' => 'content_5ff3ee2276e379_85129197',
+  'has_nocache_code' => false,
+  'file_dependency' => 
+  array (
+    '5ba16236b266a9d4f4be2776e2da4904d0122bb7' => 
+    array (
+      0 => 'C:\\xampp\\htdocs\\Loja\\adm\\view\\adm_editar_produtos.tpl',
+      1 => 1609821721,
+      2 => 'file',
+    ),
+  ),
+  'includes' => 
+  array (
+  ),
+),false)) {
+function content_5ff3ee2276e379_85129197 (Smarty_Internal_Template $_smarty_tpl) {
+?><html lang="en">
+<link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+<?php echo '<script'; ?>
+ src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"><?php echo '</script'; ?>
+>
+<?php echo '<script'; ?>
+ src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"><?php echo '</script'; ?>
+>
+<!------ Include the above in your HEAD tag ---------->
+
+<link href="//netdna.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+<?php echo '<script'; ?>
+ src="//netdna.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"><?php echo '</script'; ?>
+>
+<?php echo '<script'; ?>
+ src="//code.jquery.com/jquery-1.11.1.min.js"><?php echo '</script'; ?>
+>
+<!------ Include the above in your HEAD tag ---------->
+
+<link href="//maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet">
+<?php echo '<script'; ?>
+ src="<?php echo $_smarty_tpl->tpl_vars['GET_TEMA']->value;?>
+/tema/js/tinymce/tinymce.min.js"><?php echo '</script'; ?>
+>
+<?php echo '<script'; ?>
+ src="https://cdn.tiny.cloud/1/i7xhmo7imtecffs0hmwek6wtjfi7j4fxrbd8wmke2rq1ynbt/tinymce/5/tinymce.min.js" referrerpolicy="origin"><?php echo '</script'; ?>
+>
+<?php echo '<script'; ?>
+>
+    tinymce.init({
+      selector: '#pro_desc',
+      plugins: 'a11ychecker advcode casechange formatpainter linkchecker autolink lists checklist media mediaembed pageembed permanentpen powerpaste table advtable tinycomments tinymcespellchecker',
+      toolbar: 'a11ycheck addcomment showcomments casechange checklist code formatpainter pageembed permanentpen table',
+      toolbar_mode: 'floating',
+      tinycomments_mode: 'embedded',
+      tinycomments_author: 'Author name'
+    });
+<?php echo '</script'; ?>
+>
+<h4 class="text-center"> Editar produto </h4>
+<hr>
+  
+
+<!-- começa os campos para form produto    -->
+<section class="row" id="camposproduto">
+                                           <!--  enctype="multipart/form-data"  -->
+    <form name="frm_produto" method="post" action=""  enctype="multipart/form-data">
+        
+        <div class="col-md-6">
+            <label>Produto</label>
+            <input type="text" name="pro_nome" id="pro_nome" class="form-control"  required value="<?php echo $_smarty_tpl->tpl_vars['PRO']->value[1]['pro_nome'];?>
+">
+            
+        </div>
+        
+        
+        
+        <div class="col-md-4">
+            <label>Categoria</label>
+         
+            <select name="pro_categoria" id="pro_categoria" class="form-control" required>
+              
+                <option value="<?php echo $_smarty_tpl->tpl_vars['PRO']->value[1]['cat_id'];?>
+"> <?php echo $_smarty_tpl->tpl_vars['PRO']->value[1]['cat_nome'];?>
+ </option>                           
+                <option value=""> Escolha</option>                           
+                    <?php
+$_from = $_smarty_tpl->smarty->ext->_foreach->init($_smarty_tpl, $_smarty_tpl->tpl_vars['CATEGORIAS']->value, 'C');
+$_smarty_tpl->tpl_vars['C']->do_else = true;
+if ($_from !== null) foreach ($_from as $_smarty_tpl->tpl_vars['C']->value) {
+$_smarty_tpl->tpl_vars['C']->do_else = false;
+?>                    
+                <option value="<?php echo $_smarty_tpl->tpl_vars['C']->value['cat_id'];?>
+"><?php echo $_smarty_tpl->tpl_vars['C']->value['cat_nome'];?>
+</option>                                        
+                    <?php
+}
+$_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl, 1);?>                
+            </select>
+            
+            
+        </div>
+        
+        
+        
+        
+        <div class="col-md-2">
+            <label>Ativo</label>
+            <select name="pro_ativo" id="pro_cativo" class="form-control" required >
+              
+                <option value="<?php echo $_smarty_tpl->tpl_vars['PRO']->value[1]['pro_ativo'];?>
+"> <?php echo $_smarty_tpl->tpl_vars['PRO']->value[1]['pro_ativo'];?>
+ </option>
+                <option value=""> Escolha </option>
+                <option value="NAO"> Não </option>
+                <option value="SIM"> Sim </option>
+                
+            </select>
+            
+            
+        </div>
+        
+        
+        
+        
+        
+           <div class="col-md-3">
+            <label>Modelo</label>
+            <input type="text" name="pro_modelo" id="pro_modelo" class="form-control " value="<?php echo $_smarty_tpl->tpl_vars['PRO']->value[1]['pro_modelo'];?>
+"  >
+            
+        </div>
+        
+        
+           <div class="col-md-2">
+            <label>Referencia</label>
+            <input type="text" name="pro_ref" id="pro_ref" class="form-control" value="<?php echo $_smarty_tpl->tpl_vars['PRO']->value[1]['pro_ref'];?>
+" >
+            
+        </div>
+        
+        
+        
+           <div class="col-md-2">
+            <label>Valor</label>
+            <input type="text" name="pro_valor" id="pro_valor" class="form-control" required value="<?php echo $_smarty_tpl->tpl_vars['PRO']->value[1]['pro_valor'];?>
+">
+            
+        </div>
+        
+        
+        
+           <div class="col-md-2">
+            <label>Estoque</label>
+            <input type="text" name="pro_estoque" id="pro_estoque" class="form-control" required value="<?php echo $_smarty_tpl->tpl_vars['PRO']->value[1]['pro_estoque'];?>
+">
+            
+          </div>
+        
+        
+        
+           <div class="col-md-2">
+            <label>Tamanho</label>
+            <input type="text" name="pro_tamanho" id="pro_tamanho" class="form-control" required value="<?php echo $_smarty_tpl->tpl_vars['PRO']->value[1]['pro_tamanho'];?>
+">
+            
+          </div>
+        
+       
+        <div class="col-md-12">
+            
+            <div class="col-md-4">
+               <hr> 
+               <img src="<?php echo $_smarty_tpl->tpl_vars['PRO']->value[1]['pro_img'];?>
+" class="thumbnail" alt="" height="170" width="170">
+                
+            </div>
+            
+            <div class="col-md-4">
+            
+                 <hr>
+                 <label>Imagem Principal</label>
+                 <!--- campos para adicionar a imagem---->
+                 <input type="file" name="pro_img" class="form-control btn btn-default" id="pro_img">
+                 <!--pega o nome da imagem atual -->
+                 <input type="hidden" name="pro_img_atual" id="pro_img_atual" value="<?php echo $_smarty_tpl->tpl_vars['PRO']->value[1]['pro_img_atual'];?>
+">
+                 <!----pega o caminho completo da imagem atual -->
+                 <input type="hidden" name="pro_img_arquivo" id="pro_img_arquivo" value="<?php echo $_smarty_tpl->tpl_vars['PRO']->value[1]['pro_img_arquivo'];?>
+">
+              
+
+          
+            </div>
+            
+            <div class="col-md-4">
+                
+           
+            
+            </div>
+            
+
+            
+        </div>
+        
+        
+        
+           <div class="col-md-12">
+            <label>Descrição</label>
+           
+            <textarea name="pro_desc" id="pro_desc" rows="5" class="form-control" ><?php echo $_smarty_tpl->tpl_vars['PRO']->value[1]['pro_desc'];?>
+</textarea>
+
+          </div>
+        
+           <div class="col-md-12">
+            <label>Slug</label>
+            <input type="text" readonly name="pro_slug" id="pro_slug"   class="form-control" value="<?php echo $_smarty_tpl->tpl_vars['PRO']->value[1]['pro_slug'];?>
+">
+            
+          </div>
+        
+        <!-- botão gravar -->
+    
+      
+            
+            <div class="col-md-4">
+
+            </div>
+
+            <div class="col-md-4">
+                <br>
+                <button class="btn btn-success btn-block btn-lg" name="btn_gravar"> Editar </button>
+            </div>
+
+            <div class="col-md-4 text-right">
+               
+            </div>
+
+    
+        <input type="hidden" name="pro_id" value="<?php echo $_smarty_tpl->tpl_vars['PRO']->value[1]['pro_id'];?>
+">
+        
+        
+    </form>
+    
+    
+    
+    
+</section>
+        
+        
+        
+        <!---bloco de apagar o produto -->
+        <section class="row">
+
+            <div class="col-md-4">
+
+            </div>
+
+            <div class="col-md-4">
+
+
+            </div>
+
+            <div class="col-md-4 text-right">
+                <!--- botão que abre a opção de apagar -->
+                <br>
+                <button class="btn btn-danger " name="btn_apagar" data-toggle="collapse" data-target="#btnapagar" ><i class="glyphicon glyphicon-remove"></i> Apagar Produto</button> 
+
+            </div>
+
+
+            <div class="col-md-12 text-center collapse alert alert-danger" id="btnapagar">
+
+                <br>
+            
+
+                <form name="frm_apagar" method="post" action="">
+                    <label>Apagar este produto?</label>
+
+                    <input type="radio" name="confirmar" value="SIM" required>
+                    <!---botao que apagar o produto de uma vez -->
+                    <button class="btn btn-danger " name="btn_apagar"><i class="glyphicon glyphicon-remove"></i> OK </button> 
+
+
+
+
+                    <input type="hidden" name="pro_id_apagar" value="<?php echo $_smarty_tpl->tpl_vars['PRO']->value[1]['pro_id'];?>
+">
+                    <input type="hidden" name="pro_apagar" value="SIM">
+                    
+                       <!----pega o caminho completo da imagem atual -->
+                 <input type="hidden" name="pro_img_arquivo" id="pro_img_arquivo" value="<?php echo $_smarty_tpl->tpl_vars['PRO']->value[1]['pro_img_arquivo'];?>
+">
+
+                </form>
+
+            </div>
+
+
+        </section>
+        
+
+<br>
+<br>
+<br>
+<br>
+ <?php }
+}
